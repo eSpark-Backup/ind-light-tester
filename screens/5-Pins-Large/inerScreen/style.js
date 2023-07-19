@@ -25,7 +25,7 @@ export default styles = StyleSheet.create({
   uperBody: {
     backgroundColor: '#350338',
     height: height * 0.16,
-    width:width * 1,
+    width: width * 1,
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 18,
@@ -65,9 +65,9 @@ export default styles = StyleSheet.create({
   },
   image1: {
     alignSelf: 'center',
-    width: width * .4,
-    height: height * .11,
-    top:height * .1
+    width: width * 0.4,
+    height: height * 0.11,
+    top: height * 0.1,
   },
   image2: {
     alignSelf: 'center',
@@ -80,5 +80,3 @@ export default styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
-
-
