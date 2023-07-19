@@ -104,8 +104,7 @@ export default class Splash extends Component {
             <View style={styles.headerInner}>
               <View style={styles.goBack}>
                 <TouchableOpacity
-                  onPress={() => this.props.navigation.goBack()}
-                >
+                  onPress={() => this.props.navigation.goBack()}>
                   <Back
                     name="ios-arrow-back"
                     size={width * 0.09}
@@ -116,14 +115,13 @@ export default class Splash extends Component {
               <View
                 style={{
                   backgroundColor: '#4f87ff',
-                  width: height * 0.04,
-                  height: height * 0.04,
+                  width: height * 0.06,
+                  height: height * 0.06,
                   justifyContent: 'center',
                   alignItems: 'center',
                   borderRadius: height * 0.08,
                   elevation: height * 0.005,
-                }}
-              >
+                }}>
                 <Image
                   resizeMode="contain"
                   style={styles.logo}
@@ -134,8 +132,7 @@ export default class Splash extends Component {
                 style={{
                   width: width * 0.62,
                   marginLeft: height * 0.005,
-                }}
-              >
+                }}>
                 <TextTicker
                   style={{
                     fontSize: height * 0.02,
@@ -146,8 +143,7 @@ export default class Splash extends Component {
                   loop
                   scroll
                   repeatSpacer={50}
-                  marqueeDelay={2000}
-                >
+                  marqueeDelay={2000}>
                   5-Pin Large Round Socket Devices
                 </TextTicker>
               </View>
@@ -165,8 +161,7 @@ export default class Splash extends Component {
                       style={{
                         fontSize: width * 0.03,
                         fontFamily: Fonts.Montserrat,
-                      }}
-                    >
+                      }}>
                       Scan
                     </Text>
                   </TouchableOpacity>
@@ -178,8 +173,7 @@ export default class Splash extends Component {
                       style={{
                         fontSize: width * 0.03,
                         fontFamily: Fonts.Montserrat,
-                      }}
-                    >
+                      }}>
                       Stop
                     </Text>
                   </TouchableOpacity>
@@ -193,15 +187,13 @@ export default class Splash extends Component {
           <View>
             <TouchableOpacity
               style={styles.unknownList}
-              onPress={() => this.props.navigation.navigate('pingpage5')}
-            >
+              onPress={() => this.props.navigation.navigate('pingpage5')}>
               <Text
                 style={{
                   color: 'black',
                   fontSize: width * 0.04,
                   fontFamily: Fonts.Montserrat,
-                }}
-              >
+                }}>
                 Unknown Device
               </Text>
               <Text
@@ -209,8 +201,7 @@ export default class Splash extends Component {
                   color: 'black',
                   fontSize: width * 0.025,
                   fontFamily: Fonts.Montserrat,
-                }}
-              >
+                }}>
                 4B:8D:D5:68:2A:4f
               </Text>
             </TouchableOpacity>
@@ -226,15 +217,13 @@ export default class Splash extends Component {
                       this.props.navigation.navigate('pingpage5', {
                         deviceId: item[1],
                       })
-                    }
-                  >
+                    }>
                     <Text
                       style={{
                         color: 'black',
                         fontSize: width * 0.04,
                         fontFamily: Fonts.Montserrat,
-                      }}
-                    >
+                      }}>
                       {item[0]}
                     </Text>
                     <Text
@@ -242,8 +231,7 @@ export default class Splash extends Component {
                         color: 'black',
                         fontSize: width * 0.025,
                         fontFamily: Fonts.Montserrat,
-                      }}
-                    >
+                      }}>
                       {item[1]}
                     </Text>
                   </TouchableOpacity>

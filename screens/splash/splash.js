@@ -27,46 +27,35 @@ export default class Splash extends Component {
           backgroundColor="black"
           barStyle="default"
           hidden={true}
-          showHideTransition={'fade'}
-        ></StatusBar>
+          showHideTransition={'fade'}></StatusBar>
 
         <View style={styles.logoContainer}>
-          <Image
-            resizeMode="contain"
-            style={styles.logo}
-            source={require('../../images/LELogo.png')}
-          ></Image>
-
           <View
             style={{
               alignItems: 'center',
-            }}
-          >
+            }}>
             <View
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-              }}
-            >
+              }}>
               <Text
                 style={{
                   fontSize: width * 0.15,
                   color: 'white',
-                  fontFamily: Fonts.BalooChettan2,
+                  fontFamily: Fonts.Montserrat,
 
                   bottom: height * 0.009,
                   left: width * 0.03,
-                }}
-              >
+                }}>
                 T
               </Text>
               <Text
                 style={{
                   fontSize: width * 0.07,
                   color: 'white',
-                  fontFamily: Fonts.BalooChettan2,
-                }}
-              >
+                  fontFamily: Fonts.Montserrat,
+                }}>
                 RAILER
               </Text>
               <Text
@@ -74,20 +63,18 @@ export default class Splash extends Component {
                   fontSize: width * 0.15,
                   color: 'white',
                   bottom: height * 0.009,
-                  fontFamily: Fonts.BalooChettan2,
+                  fontFamily: Fonts.Montserrat,
                   left: width * 0.003,
-                }}
-              >
+                }}>
                 {' '}
                 S
               </Text>
               <Text
                 style={{
                   fontSize: width * 0.07,
-                  fontFamily: Fonts.BalooChettan2,
+                  fontFamily: Fonts.Montserrat,
                   color: 'white',
-                }}
-              >
+                }}>
                 OCKET
               </Text>
             </View>
@@ -95,42 +82,42 @@ export default class Splash extends Component {
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-              }}
-            >
+              }}>
               <Text
                 style={{
                   fontSize: width * 0.15,
                   color: 'white',
-                  fontFamily: Fonts.BalooChettan2,
+                  fontFamily: Fonts.Montserrat,
                   bottom: height * 0.009,
                   left: width * 0.03,
-                }}
-              >
+                }}>
                 T
               </Text>
               <Text
                 style={{
                   fontSize: width * 0.07,
                   color: 'white',
-                  fontFamily: Fonts.BalooChettan2,
+                  fontFamily: Fonts.Montserrat,
 
                   // fontStyle:'notoserif',
-                }}
-              >
+                }}>
                 ESTER
               </Text>
             </View>
           </View>
+          <Image
+            resizeMode="contain"
+            style={styles.logo}
+            source={require('../../images/LELogo.png')}></Image>
         </View>
+
         <View
           style={{
             width: width * 1,
             height: height * 0.3,
-            justifyContent: 'space-around',
             alignItems: 'center',
-            paddingVertical: height * 0.1,
-          }}
-        >
+            // paddingVertical: height * 0.1,
+          }}>
           <Text style={styles.textStyle1}>Human Connectivity Evolved</Text>
 
           <ActivityIndicator

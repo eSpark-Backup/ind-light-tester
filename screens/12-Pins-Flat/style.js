@@ -1,10 +1,10 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 //Packages
-import { Fonts } from '../../scr/utils/fonts';
+import {Fonts} from '../../scr/utils/fonts';
 
 //Files
-const { width, height } = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -13,7 +13,7 @@ export default styles = StyleSheet.create({
   headerContainer: {
     height: '28%',
     backgroundColor: 'white',
-    elevation: width * .003,
+    elevation: width * 0.003,
   },
   header: {
     width: '100%',
@@ -24,52 +24,51 @@ export default styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  goBack:{
-    width: width * .04,
+  goBack: {
     // position: "absolute",
-    marginLeft: width * .02
+    marginLeft: width * 0.02,
   },
   logo: {
-    width: width * .1,
+    width: width * 0.1,
     // position: "absolute",
     // left: width * .08
   },
   textStyle1: {
     color: 'black',
-    fontSize: width * .04,
+    fontSize: width * 0.04,
     fontFamily: Fonts.Montserrat,
-    position: "absolute",
-    left: width * .13
+    position: 'absolute',
+    left: width * 0.13,
     // fontWeight: 'bold',
   },
-  activityIndicator:{
-    position : "absolute",
-    right : width * .13
+  activityIndicator: {
+    position: 'absolute',
+    right: width * 0.13,
   },
-  scanView:{
-    height: height * .05,
+  scanView: {
+    height: height * 0.05,
     borderWidth: 0.5,
     borderColor: '#b4b4b4d0',
-    position : "absolute",
-    right : width * .12
+    position: 'absolute',
+    right: width * 0.12,
   },
-  scanButtun:{
-    position : "absolute",
-    right :width * .02
+  scanButtun: {
+    position: 'absolute',
+    right: width * 0.02,
   },
   body: {
     flex: 8,
   },
   unknownList: {
-    height: height * .07,
-    width: width * .9,
+    height: height * 0.07,
+    width: width * 0.9,
     alignSelf: 'center',
     justifyContent: 'center',
-    elevation: width * .005,
+    elevation: width * 0.005,
     // borderBottomWidth:1,
     backgroundColor: 'white',
-    paddingLeft: width * .02,
-    marginTop: height * .02,
-    borderRadius: width * .01
+    paddingLeft: width * 0.02,
+    marginTop: height * 0.02,
+    borderRadius: width * 0.01,
   },
 });

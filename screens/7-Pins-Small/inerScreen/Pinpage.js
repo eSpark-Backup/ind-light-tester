@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import {
   AppRegistry,
@@ -9,7 +9,7 @@ import {
   ImageBackground,
   ActivityIndicator,
   StatusBar,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 import Back from 'react-native-vector-icons/Ionicons';
 import BleManager from 'react-native-ble-manager';
@@ -17,10 +17,10 @@ import BleManager from 'react-native-ble-manager';
 
 // import styles from './style';
 import styles from '../../13-Pins-Round/inerScreen/style';
-import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
+import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 // import {SceneView} from 'react-navigation';
-import { NativeModules, NativeEventEmitter } from 'react-native';
-const { width, height } = Dimensions.get('window');
+import {NativeModules, NativeEventEmitter} from 'react-native';
+const {width, height} = Dimensions.get('window');
 
 const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
@@ -54,14 +54,14 @@ export default class Splash extends Component {
       // Add event listener
       bleManagerEmitter.addListener(
         'BleManagerDidUpdateValueForCharacteristic',
-        ({ value, peripheral, characteristic, service }) => {
+        ({value, peripheral, characteristic, service}) => {
           // Convert bytes array to string
           console.log('value in decimal: ', value);
           // let hex,}
           // let sum = value[3]+value[2]+value[1]+value[0];
 
           const hexadec = value;
-          console.log(hexadec)
+          console.log(hexadec);
 
           // for (let i = 0; i < value.length; i++) {
           // console.log('sum =',hexadec)
@@ -100,140 +100,118 @@ export default class Splash extends Component {
             this.setState({
               leftIndi: true,
             });
-          }
-          else {
+          } else {
             this.setState({
               leftIndi: false,
-            })
+            });
           }
           //right Turn
           if ((hexadec[3] & 2) == 2) {
             this.setState({
               rightIndi: true,
-
             });
-          }
-          else {
+          } else {
             this.setState({
               rightIndi: false,
-            })
+            });
           }
           //stop Light
           if ((hexadec[3] & 32) == 32) {
             this.setState({
               stopLig: true,
             });
-          }
-          else {
+          } else {
             this.setState({
               stopLig: false,
-            })
+            });
           }
           //ignition Power
           if ((hexadec[2] & 1) == 1) {
             this.setState({
               ignition: true,
             });
-          }
-          else {
+          } else {
             this.setState({
               ignition: false,
-            })
+            });
           }
           //battery Power
           if ((hexadec[3] & 128) == 128) {
             this.setState({
               newBat: true,
             });
-          }
-          else {
+          } else {
             this.setState({
               newBat: false,
-            })
+            });
           }
           //Fog Light
           if ((hexadec[3] & 16) == 16) {
             this.setState({
               fogBlue: true,
             });
-          }
-          else {
+          } else {
             this.setState({
               fogBlue: false,
-            })
+            });
           }
           //Reverse Light
           if ((hexadec[3] & 64) == 64) {
             this.setState({
               pinkReverse: true,
             });
-          }
-          else {
+          } else {
             this.setState({
               pinkReverse: false,
-            })
+            });
           }
           //Park Light (L)
           if ((hexadec[3] & 4) == 4) {
             this.setState({
               rareLeft: true,
             });
-          }
-          else {
+          } else {
             this.setState({
               rareLeft: false,
-            })
+            });
           }
           //Park Light (R)
           if ((hexadec[3] & 8) == 8) {
             this.setState({
               rareRight: true,
             });
-          }
-          else {
+          } else {
             this.setState({
               rareRight: false,
-            })
+            });
           }
           if (hexadec[1] == 1) {
-            this.setState({ barSignal: 1 })
-          }
-          else if (hexadec[1] == 16) {
-            this.setState({ barSignal: 2 })
-          }
-          else if (hexadec[1] == 17) {
-            this.setState({ barSignal: 3 })
-          }
-          else if (hexadec[1] == 2) {
-            this.setState({ barSignal: 4 })
-          }
-          else if (hexadec[1] == 32) {
-            this.setState({ barSignal: 5 })
-          }
-          else if (hexadec[1] == 4) {
-            this.setState({ barSignal: 6 })
-          }
-          else if (hexadec[1] == 64) {
-            this.setState({ barSignal: 7 })
-          }
-          else if (hexadec[1] == 8) {
-            this.setState({ barSignal: 8 })
-          }
-          else if (hexadec[1] == 128) {
-            this.setState({ barSignal: 9 })
-          }
-          else if (hexadec[0] == 1) {
-            this.setState({ barSignal: 10 })
-          }
-          else if (hexadec[0] == 16) {
-            this.setState({ barSignal: 11 })
-          }
-          else if (hexadec[0] == 17) {
-            this.setState({ barSignal: 12 })
+            this.setState({barSignal: 1});
+          } else if (hexadec[1] == 16) {
+            this.setState({barSignal: 2});
+          } else if (hexadec[1] == 17) {
+            this.setState({barSignal: 3});
+          } else if (hexadec[1] == 2) {
+            this.setState({barSignal: 4});
+          } else if (hexadec[1] == 32) {
+            this.setState({barSignal: 5});
+          } else if (hexadec[1] == 4) {
+            this.setState({barSignal: 6});
+          } else if (hexadec[1] == 64) {
+            this.setState({barSignal: 7});
+          } else if (hexadec[1] == 8) {
+            this.setState({barSignal: 8});
+          } else if (hexadec[1] == 128) {
+            this.setState({barSignal: 9});
+          } else if (hexadec[0] == 1) {
+            this.setState({barSignal: 10});
+          } else if (hexadec[0] == 16) {
+            this.setState({barSignal: 11});
+          } else if (hexadec[0] == 17) {
+            this.setState({barSignal: 12});
           } else {
-            this.setState({ barSignal: 0 })
+            this.setState({barSignal: 0});
           }
-
         },
       );
     } catch (err) {
@@ -256,7 +234,7 @@ export default class Splash extends Component {
       // Success code
       // Success code
       BleManager.getBondedPeripherals()
-        .then((res) => {
+        .then(res => {
           console.log(res[0].id);
           this.setState({
             deviceId: res[0].id,
@@ -273,14 +251,14 @@ export default class Splash extends Component {
               //read rssi
               this.timeout = setInterval(() => {
                 BleManager.readRSSI(this.state.deviceId)
-                  .then((rssi) => {
+                  .then(rssi => {
                     // Success code
                     console.log('Current RSSI: ' + rssi);
                     this.setState({
                       rssi_strength: rssi,
                     });
                   })
-                  .catch((error) => {
+                  .catch(error => {
                     // Failure code
                     console.log(error);
                   });
@@ -293,7 +271,7 @@ export default class Splash extends Component {
                 'beb5483e-36e1-4688-b7f5-ea07361b26a8',
               );
             })
-            .catch((error) => {
+            .catch(error => {
               // Failure code
               console.log('err', error);
             });
@@ -346,37 +324,51 @@ export default class Splash extends Component {
       image_source = require('../../../images/5pin/action_null.png');
     }
     let bar_signal;
-    this.state.barSignal == 0 ? bar_signal = require('../../../images//BARS/0.png')
-      : this.state.barSignal == 1 ? bar_signal = require('../../../images/BARS/1.png')
-        : this.state.barSignal == 2 ? bar_signal = require('../../../images//BARS/2.png')
-          : this.state.barSignal == 3 ? bar_signal = require('../../../images//BARS/3.png')
-            : this.state.barSignal == 4 ? bar_signal = require('../../../images//BARS/4.png')
-              : this.state.barSignal == 5 ? bar_signal = require('../../../images//BARS/5.png')
-                : this.state.barSignal == 6 ? bar_signal = require('../../../images//BARS/6.png')
-                  : this.state.barSignal == 7 ? bar_signal = require('../../../images//BARS/7.png')
-                    : this.state.barSignal == 8 ? bar_signal = require('../../../images//BARS/8.png')
-                      : this.state.barSignal == 9 ? bar_signal = require('../../../images//BARS/9.png')
-                        : this.state.barSignal == 10 ? bar_signal = require('../../../images//BARS/10.png')
-                          : this.state.barSignal == 11 ? bar_signal = require('../../../images//BARS/11.png')
-                            : this.state.barSignal == 12 ? bar_signal = require('../../../images//BARS/12.png')
-                              : bar_signal = require('../../../images//BARS/0.png')
+    this.state.barSignal == 0
+      ? (bar_signal = require('../../../images//BARS/0.png'))
+      : this.state.barSignal == 1
+      ? (bar_signal = require('../../../images/BARS/1.png'))
+      : this.state.barSignal == 2
+      ? (bar_signal = require('../../../images//BARS/2.png'))
+      : this.state.barSignal == 3
+      ? (bar_signal = require('../../../images//BARS/3.png'))
+      : this.state.barSignal == 4
+      ? (bar_signal = require('../../../images//BARS/4.png'))
+      : this.state.barSignal == 5
+      ? (bar_signal = require('../../../images//BARS/5.png'))
+      : this.state.barSignal == 6
+      ? (bar_signal = require('../../../images//BARS/6.png'))
+      : this.state.barSignal == 7
+      ? (bar_signal = require('../../../images//BARS/7.png'))
+      : this.state.barSignal == 8
+      ? (bar_signal = require('../../../images//BARS/8.png'))
+      : this.state.barSignal == 9
+      ? (bar_signal = require('../../../images//BARS/9.png'))
+      : this.state.barSignal == 10
+      ? (bar_signal = require('../../../images//BARS/10.png'))
+      : this.state.barSignal == 11
+      ? (bar_signal = require('../../../images//BARS/11.png'))
+      : this.state.barSignal == 12
+      ? (bar_signal = require('../../../images//BARS/12.png'))
+      : (bar_signal = require('../../../images//BARS/0.png'));
     return (
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.goBack}>
             <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-              <Back name="ios-arrow-back" size={width * .08} color="black" />
+              <Back name="ios-arrow-back" size={width * 0.08} color="black" />
             </TouchableOpacity>
           </View>
-          <View style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
             <Text
               style={{
-                fontSize: height * .015,
+                fontSize: height * 0.015,
                 color: 'black',
-                marginBottom: height * .05
+                marginBottom: height * 0.05,
               }}>
               RSSI
             </Text>
@@ -393,13 +385,12 @@ export default class Splash extends Component {
           </View>
         </View>
         <View style={styles.uperBody}>
-          <View style={{
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}>
-            <Text style={styles.brakeText}>
-              Electric Brakes
-            </Text>
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={styles.brakeText}>Electric Brakes</Text>
             <Image
               resizeMode="contain"
               style={styles.loadingLineAbsolut}
@@ -437,7 +428,7 @@ export default class Splash extends Component {
                 />
               </View>
               <View style={styles.imageBox}>
-                <Text style={styles.imageText}>LEFT-HAND TURN</Text>
+                <Text style={styles.imageText}>L/H IND</Text>
                 <Image
                   resizeMode="contain"
                   style={styles.image3}
@@ -445,7 +436,7 @@ export default class Splash extends Component {
                 />
               </View>
               <View style={styles.imageBox}>
-                <Text style={styles.imageText}>RIGHT-HAND TURN</Text>
+                <Text style={styles.imageText}>R/H IND</Text>
                 <Image
                   resizeMode="contain"
                   style={styles.image3}
@@ -453,7 +444,7 @@ export default class Splash extends Component {
                 />
               </View>
               <View style={styles.imageBox}>
-                <Text style={styles.imageText}>REAR LAMPS</Text>
+                <Text style={styles.imageText}>TAIL LIGHTS</Text>
                 <Image
                   resizeMode="contain"
                   style={styles.image3}
@@ -461,7 +452,7 @@ export default class Splash extends Component {
                 />
               </View>
               <View style={styles.imageBox}>
-                <Text style={styles.imageText}>REVERSING SIGNAL</Text>
+                <Text style={styles.imageText}>REVERSE LIGHTS</Text>
                 <Image
                   resizeMode="contain"
                   style={styles.image3}
@@ -469,7 +460,7 @@ export default class Splash extends Component {
                 />
               </View>
               <View style={styles.imageBox}>
-                <Text style={styles.imageText}>STOP LAMPS</Text>
+                <Text style={styles.imageText}>STOP LIGHTS</Text>
                 <Image
                   resizeMode="contain"
                   style={styles.image3}

@@ -25,7 +25,6 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
   },
   goBack: {
-    width: width * 0.04,
     // position: 'absolute',
     marginLeft: width * 0.02,
   },

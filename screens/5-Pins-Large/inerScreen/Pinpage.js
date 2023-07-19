@@ -349,15 +349,13 @@ export default class Splash extends Component {
             style={{
               justifyContent: 'center',
               alignItems: 'center',
-            }}
-          >
+            }}>
             <Text
               style={{
                 fontSize: height * 0.015,
                 color: 'black',
                 marginBottom: height * 0.05,
-              }}
-            >
+              }}>
               RSSI
             </Text>
             <Image
@@ -377,8 +375,7 @@ export default class Splash extends Component {
             style={{
               justifyContent: 'center',
               alignItems: 'center',
-            }}
-          >
+            }}>
             <Text style={styles.brakeText}>Electric Brakes</Text>
             <Image
               resizeMode="contain"
@@ -399,8 +396,7 @@ export default class Splash extends Component {
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 justifyContent: 'center',
-              }}
-            >
+              }}>
               <View style={styles.imageBox}>
                 <Text style={styles.imageText}>5-PIN ROUND</Text>
                 <Image
@@ -418,7 +414,7 @@ export default class Splash extends Component {
                 />
               </View>
               <View style={styles.imageBox}>
-                <Text style={styles.imageText}>LEFT-HAND TURN</Text>
+                <Text style={styles.imageText}>L/H IND</Text>
                 <Image
                   resizeMode="contain"
                   style={styles.image3}
@@ -426,7 +422,7 @@ export default class Splash extends Component {
                 />
               </View>
               <View style={styles.imageBox}>
-                <Text style={styles.imageText}>RIGHT-HAND TURN</Text>
+                <Text style={styles.imageText}>R/H IND</Text>
                 <Image
                   resizeMode="contain"
                   style={styles.image3}
@@ -434,7 +430,7 @@ export default class Splash extends Component {
                 />
               </View>
               <View style={styles.imageBox}>
-                <Text style={styles.imageText}>REAR LAMPS</Text>
+                <Text style={styles.imageText}>TAIL LIGHTS</Text>
                 <Image
                   resizeMode="contain"
                   style={styles.image3}
@@ -442,7 +438,7 @@ export default class Splash extends Component {
                 />
               </View>
               <View style={styles.imageBox}>
-                <Text style={styles.imageText}>STOP LAMPS</Text>
+                <Text style={styles.imageText}>STOP LIGHTS</Text>
                 <Image
                   resizeMode="contain"
                   style={styles.image3}
